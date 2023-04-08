@@ -1,0 +1,11 @@
+pathlib
+flask
+flask_login
+os
+datetime
+werkzeug.security
+sqlalchemy
+shutil
+requests
+json
+flask_login
