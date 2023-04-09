@@ -25,6 +25,7 @@ from flask import send_from_directory
 from flask import url_for
 from werkzeug.utils import secure_filename
 from pathlib import Path
+from waitress import serve
 
 # получаем с помощью API картинку из яндекс карт
 response = requests.get('https://static-maps.yandex.ru/1.x/?l=map&pt=55.741251,%20' +
@@ -428,3 +429,5 @@ def load_user(user_id):
 
 if __name__ == '__main__':
     main()
+    port = int(os.environ.get("PORT", 5000))
+    serve(app, host='0.0.0.0', port=port)
